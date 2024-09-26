@@ -1,5 +1,5 @@
 
-from collections import Counter
+from collections import Counter, deque
 
 def find_most_common_word(word_dict):
     # Flatten the list of words from all dictionary values
@@ -24,7 +24,17 @@ word_dictionary = {
 }
 
 most_common, count = find_most_common_word(word_dictionary)
-print(f"The most common word is '{most_common}' with {count} appearances.")
+# print(f"The most common word is '{most_common}' with {count} appearances.")
+
+# multiline_str = 'Hi There\nHow are you?\nI am fine'
+# multiline_str_split_list = multiline_str.split('\n')
+# for s in multiline_str_split_list:
+#     print(s)
+nums = deque([2,4,6,8])
+newnums = [1,3,5,7]
+nums.extendleft(newnums)
+print(nums)
+print(list(reversed(nums)))
 # ```
 
 # This script does the following:
