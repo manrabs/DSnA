@@ -30,36 +30,42 @@
 class Solution:
     def productExceptSelf(self, nums: list[int]) -> list[int]:
         # O(n) space complexity solution
-        prefix = 1
-        postfix = 1
+        left = 1
+        right = 1
         n = len(nums)
-        pre_arr = [0] * n
-        post_arr = [0] * n
+        left_arr = [0] * n
+        right_arr = [0] * n
         res = []
 
         for i in range(n):
-            j = -i -1
-            pre_arr[i] = prefix
-            post_arr[j] = postfix
-            prefix *= nums[i]
-            postfix *= nums[j]
-        
-        for pre, post in zip(pre_arr, post_arr):
-            res.append(pre*post)
+            j = -i -1 # cool way to go forwards and backwards on the array at the same time where i is at index zero and j is at index len-1
+            
+            # code below populates new left_arr and right_arr by assigning the values of left and right variables (i.e., the number 1, initially) to the
+            # current index of left_arr and right_arr. Then it multiplies the left and right variables (i.e. 1, initially) by the respective current index of the original nums list.
+            left_arr[i] = left
+            right_arr[j] = right
+            left *= nums[i]
+            right *= nums[j]
+
+        # zip function is used to iterate over the left_arr and right_arr lists simultaneously, pairing up the elements at the same index from the two lists and returns them as a tuple on each iteration.
+        # The for loop then unpacks each tuple into the variables l and r, which represent the corresponding elements from the left_arr and right_arr lists, respectively
+        # The overall effect is the main juice of the squeeze (i.e. the problem) because multiplication occurs on each pair of corresponding elements from the left_arr and right_arr lists, and collects the results in the res list.   
+        for l, r in zip(left_arr, right_arr):
+            res.append(l*r)
         
         return res
 
         # O(1) space complexity solution
         # n = len(nums)
         # res = [0] * n
-        # prefix = 1
+        # left = 1
         # for i in range(n):
-        #     res[i] = prefix
-        #     prefix *= nums[i]
-        # postfix = 1
+        #     res[i] = left
+        #     left *= nums[i]
+        # right = 1
         # for i in range(n-1, -1, -1):
-        #     res[i] *= postfix
-        #     postfix *= nums[i]
+        #     res[i] *= right
+        #     right *= nums[i]
         # return res 
 
 if __name__ == "__main__":
