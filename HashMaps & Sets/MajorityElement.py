@@ -23,9 +23,6 @@ class Solution:
         # Linear time and O(n) Solution
         # returns first answer to get to max value if there is more than one answer
         counter = Counter(nums)
-        # for num in nums:
-        #     counter[num] += 1
-        
         answer = -1
         maxCount = 0
         for key, val in counter.items():
