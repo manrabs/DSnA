@@ -32,6 +32,6 @@ class Solution:
         return answer
 
 if __name__ == '__main__':
-    temps = [80,79,71,72,74,85]
+    temps = [80,79,71,80,74,85]
     sol = Solution()
     print(sol.dailyTemperatures(temps))
