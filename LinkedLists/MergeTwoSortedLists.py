@@ -80,6 +80,7 @@ if __name__ == "__main__":
     curr = mergedList
 
     while curr:
-        print(curr.val, end=" -> ")
+        node_address = id(curr)
+        print(f"{curr.val} at {node_address}", end=" -> ")
         curr = curr.next
     print("None")
