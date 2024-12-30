@@ -23,20 +23,30 @@
 # Only one valid answer exists.
  
 # Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
-
+from collections import defaultdict
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        numMap = {}
-        n = len(nums)
+        # numMap = {}
+        # n = len(nums)
 
-        for i in range(n):
-            numMap[nums[i]] = i
+        # for i in range(n):
+        #     numMap[nums[i]] = i
 
-        for i in range(n):
-            y = target - nums[i]
-            if y in numMap and numMap[y] != i:
-                return [i, numMap[y]]
-        return [] 
+        # for i in range(n):
+        #     y = target - nums[i]
+        #     if y in numMap and numMap[y] != i:
+        #         return [i, numMap[y]]
+        # return [] 
+
+        numMap = defaultdict(lambda: -1)
+    
+        for i, num in enumerate(nums):
+            complement = target - num
+            if numMap[complement] != -1:
+                return [numMap[complement], i]
+            numMap[num] = i
+        
+        return []
 
 if __name__ == '__main__':
     nums = [2,7,11,15]
