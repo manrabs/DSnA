@@ -27,9 +27,11 @@ class Solution:
             if t in balloon:
                 balloonCounter[t] += 1
         
+        # return 0 if there is even one character in word 'balloon' that's not in balloonCounter hashmap (basically if your hashmap has even one value missing from the word 'balloon' then you couldn't output even one 'balloon' from the text provided)
         if any(t not in balloonCounter for t in balloon):
             return 0
         else:
+            # return minimum of each value in hashmap because you can only form as many instances of the word 'balloon' as the minimum value of each character in the word 'balloon'
             return min(balloonCounter['b'], balloonCounter['a'], balloonCounter['l']//2, balloonCounter['o']//2, balloonCounter['n'])
     
 
