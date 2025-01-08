@@ -69,6 +69,6 @@ class Solution:
         # return res 
 
 if __name__ == "__main__":
-    nums = [1,2,3,4]
+    nums = [2,8,3,5]
     sol = Solution()
     print(sol.productExceptSelf(nums))

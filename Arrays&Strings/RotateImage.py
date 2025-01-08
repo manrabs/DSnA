@@ -33,6 +33,9 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    matrixx = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+    matrixx = [[5,1,9,11],
+               [2,4,8,10],
+               [13,3,6,7],
+               [15,14,12,16]]
     sol.rotate(matrixx)
     print(matrixx)
