@@ -58,6 +58,30 @@ class Nodes:
                 i = smallest
             else:
                 break
+    
+    def remove_min(heap):
+        n = len(heap)
+        if n == 0:
+            return None
+        if n == 1:
+            return heap.pop()
+        heap[0], heap[n-1] = heap[n-1], heap[0]
+        n -= 1
+        i = 0
+        while (2*i) + 1 < n: #we use the left index to check if we're at end of heap because right index is always greater
+            # make j the index of the smallest child by checking if right child exists and is smaller than left
+            j = (2*i) + 1
+            if (2*i) + 2 <  n and heap[(2*i) + 2] < heap[j]:
+                j = (2*i) + 2
+            # if the heap property is satisfied, stop. i.e. if child value is greater than parent value
+            if heap[j] >= heap[i]:
+                break
+            else:
+                heap[i], heap[j] = heap[j], heap[i]
+                i = j
+        return heap(n)
+
+
 # # Example usage
 if __name__ == "__main__":
     heap = [1, 3, 6, 5, 9, 8]
