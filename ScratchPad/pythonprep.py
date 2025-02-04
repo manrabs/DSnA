@@ -33,7 +33,7 @@ data = [
     {'device_id': 2, 'consumption': 15},
     {'device_id': 1, 'consumption': 5},
 ]
-print(aggregate_consumption(data))  # Output: {1: 15, 2: 15}
+print(aggregate_metadata (data))  # Output: {1: 15, 2: 15}
 
 # Explanation:
 # 1. Initialize an empty dictionary `result` to store the total consumption for each device.
