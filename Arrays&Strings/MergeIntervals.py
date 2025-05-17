@@ -24,6 +24,7 @@ class Solution:
         merged = []
         for interval in intervals:
             # add next pair to merged list if empty or if the 2nd value in the last pair of merged list (merged[-1][1]) is less than the first value of current pair (interval[0]) in intervals list
+            print(f"{interval} consists of: {interval[0]} and {interval[1]}")
             if not merged or merged[-1][1] < interval[0]:
                 merged.append(interval)
             # otherwise update the last pair of the merged list to maintain it's current first value and change the 2nd value to the larger of the two end values (i.e. higher value between 2nd value of the current interval pair and 2nd value of the current last pair in merged list)
@@ -33,5 +34,5 @@ class Solution:
         return merged
 if __name__ == '__main__':
     sol = Solution()
-    intervals = [[1,3], [2,4], [5,7], [6,8]]
+    intervals = [[1,4], [2,5], [5,7], [6,8]]
     print(sol.merge(intervals))
