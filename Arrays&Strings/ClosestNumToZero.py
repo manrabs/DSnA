@@ -26,10 +26,15 @@ class Solution:
         for x in nums:
             if abs(x) < abs(closest):
                 closest = x
-        if closest < 0 and abs(closest) in nums:
-            return abs(closest)
-        else:
-            return closest
+            elif abs(x) == abs(closest) and x > closest:
+                closest = x
+        return closest
+        #     if abs(x) < abs(closest):
+        #         closest = x
+        # if closest < 0 and abs(closest) in nums:
+        #     return abs(closest)
+        # else:
+        #     return closest
 
 
 if __name__ == '__main__':
