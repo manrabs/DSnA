@@ -29,7 +29,7 @@ class Solution:
     
 
 if __name__ == '__main__':
-    sol = Solution
+    sol = Solution()
     vals = [2,0,2,1,1,0]
     print(sol.arrange(vals))
 
