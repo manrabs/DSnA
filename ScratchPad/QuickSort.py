@@ -64,7 +64,8 @@ def quickselect(arr, k):
 
 # The Quickselect algorithm efficiently finds the element at a specific index K in an array as if the array were sorted, without actually sorting the entire array. This is achieved by recursively partitioning the array around a randomly chosen pivot until the pivot is at the desired index K. The algorithm is similar to the Quicksort algorithm, but instead of recursively sorting both sides of the partition, it only recurses on the side of the partition that contains the desired index K.
 if __name__ == '__main__':
-    arr = [3, 6, 8, 10, 1, 2, 1]
+    arr = [3,4,5,6,17,845,2432,5,1,6,8,8,9,34, 6, 8, 10, 1, 2, 1]
+    print(quick_sort(arr))
     sorted_arr = myQuickSort(arr)
     print(sorted_arr)
     k = len(arr) - 2
