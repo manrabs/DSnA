@@ -23,16 +23,14 @@
 
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
-        
-        newSet = set()
+        seen = set()
         for num in nums:
-            if num in newSet:
+            if num in seen:
                 return True
-            else:
-                newSet.add(num)
+            seen.add(num)
         return False
 
 if __name__ == '__main__':
-    nums = [1,2,4,5]
+    nums = [1,2,4,5,3,2]
     sol = Solution()
     print(sol.containsDuplicate(nums))

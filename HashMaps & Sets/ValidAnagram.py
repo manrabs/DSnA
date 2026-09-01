@@ -23,7 +23,7 @@ class Solution:
         return sDict == tDict
     
 if __name__ == '__main__':
-    s = "anagram"
-    t = "granamad"
+    s = "anagrram"
+    t = "granama"
     sol = Solution()
     print(sol.isAnagram(s, t))
